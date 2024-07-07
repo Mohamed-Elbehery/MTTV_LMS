@@ -1,4 +1,5 @@
-import { Video, videos } from "../constants/videos";
+import { videos } from "../constants/videos";
+import { Video } from "../types";
 
 export function getNextVideo(currentVideoId: number): Video | null {
   const phases = [videos.phase1, videos.phase2, videos.phase3, videos.phase4];
