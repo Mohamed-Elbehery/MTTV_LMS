@@ -4,7 +4,8 @@ import { create } from "zustand";
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronLeft } from "react-icons/fa";
 import { getNextVideo } from "./utils/getNextVideo";
-import { FaLeftLong, FaXmark } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 type Store = {
   activeVideo: Video;
@@ -43,7 +44,7 @@ const App = () => {
         onClick={() => setIsCourseContentHidden(false)}
         className="fixed top-10 -right-32 bg-[#2D2F31] border p-4 flex items-center gap-x-3 hover:bg-[#3c3e41] hover:-right-1 transition-all duration-500 cursor-pointer"
       >
-        <FaLeftLong size={23} /> Course Content
+        <RxHamburgerMenu size={23} /> Course Content
       </div>
       <Sidebar
         isCourseContentHidden={isCourseContentHidden}
