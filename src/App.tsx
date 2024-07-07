@@ -10,16 +10,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 type Store = {
   activeVideo: Video;
   setActiveVideo: (activeUrl: Video) => void;
+
+  isCourseContentHidden: boolean;
+  setIsCourseContentHidden: (isCourseContentHidden: boolean) => void;
 };
 
 const useStore = create<Store>()((set) => ({
   activeVideo: videos.phase1.phase[0],
   setActiveVideo: (activeVideo) => set(() => ({ activeVideo: activeVideo })),
+  isCourseContentHidden: true,
+  setIsCourseContentHidden: (isCourseContentHidden) =>
+    set(() => ({ isCourseContentHidden: isCourseContentHidden })),
 }));
 
 const App = () => {
-  const { activeVideo, setActiveVideo } = useStore();
-  const [isCourseContentHidden, setIsCourseContentHidden] = useState(true);
+  const { activeVideo, setActiveVideo, setIsCourseContentHidden } = useStore();
 
   return (
     <div className="flex justify-center gap-x-6">
@@ -44,23 +49,17 @@ const App = () => {
       >
         <RxHamburgerMenu size={23} /> Course Content
       </div>
-      <Sidebar
-        isCourseContentHidden={isCourseContentHidden}
-        setIsCourseContentHidden={setIsCourseContentHidden}
-      />
+
+      <Sidebar />
     </div>
   );
 };
 
 export default App;
 
-const Sidebar = ({
-  isCourseContentHidden,
-  setIsCourseContentHidden,
-}: {
-  isCourseContentHidden: boolean;
-  setIsCourseContentHidden: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const Sidebar = () => {
+  const { isCourseContentHidden, setIsCourseContentHidden } = useStore();
+
   return (
     <aside
       className={`fixed top-0 bottom-0 w-[600px] max-[600px]:w-full overflow-auto transition-all duration-700 ease-in-out bg-[#2D2F31] ${
@@ -85,7 +84,7 @@ const Sidebar = ({
 const Phase: React.FC<{ phase: { phase: Video[]; title: string } }> = (
   phase
 ) => {
-  const { activeVideo, setActiveVideo } = useStore();
+  const { activeVideo, setActiveVideo, setIsCourseContentHidden } = useStore();
   const [isPhaseOpened, setIsPhaseOpened] = useState(false);
 
   useEffect(() => {
@@ -113,7 +112,9 @@ const Phase: React.FC<{ phase: { phase: Video[]; title: string } }> = (
         <div className={"overflow-hidden"}>
           {phase.phase.phase.map((video) => (
             <button
-              onClick={() => setActiveVideo(video)}
+              onClick={() => (
+                setActiveVideo(video), setIsCourseContentHidden(true)
+              )}
               className={`px-4 py-2 pr-8 text-right w-full transition duration-500 hover:bg-zinc-600 flex gap-x-3 ${
                 activeVideo.url === video.url && "bg-zinc-600"
               }`}
