@@ -27,7 +27,7 @@ const App = () => {
         {/* Large Screens */}
         <ReactPlayer
           width={"100%"}
-          height={"90vh"}
+          height={"80vh"}
           url={activeVideo.url}
           playsinline
           controls
@@ -40,7 +40,7 @@ const App = () => {
 
       <div
         onClick={() => setIsCourseContentHidden(false)}
-        className="fixed top-[5vh] -right-32 bg-[#2D2F31] border p-4 flex items-center gap-x-3 hover:bg-[#3c3e41] hover:-right-1 transition-all duration-500 cursor-pointer"
+        className="fixed top-[10vh] -right-32 bg-[#2D2F31] border p-4 flex items-center gap-x-3 hover:bg-[#3c3e41] hover:-right-1 transition-all duration-500 cursor-pointer"
       >
         <RxHamburgerMenu size={23} /> Course Content
       </div>
