@@ -31,7 +31,7 @@ const App = () => {
           url={activeVideo.url}
           playsinline
           onEnded={() => {
-            const nextVideo = getNextVideo(activeVideo.id);
+            const nextVideo = getNextVideo(activeVideo.id - 1);
             if (nextVideo) {
               setActiveVideo(nextVideo);
             }
@@ -119,9 +119,9 @@ const Phase: React.FC<{ phase: { phase: Video[]; title: string } }> = (
               className={`px-4 py-2 pr-8 text-right w-full transition duration-500 ease-out hover:bg-zinc-600 flex gap-x-3 ${
                 activeVideo.url === video.url && "bg-zinc-600"
               }`}
-              key={`${video.id} - ${video.title}`}
+              key={`${video.id - 1} - ${video.title}`}
             >
-              <span>{video.id}</span> - {video.title}
+              <span>{video.id - 1}</span> - {video.title}
             </button>
           ))}
         </div>

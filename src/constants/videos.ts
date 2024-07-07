@@ -18,11 +18,11 @@ export const videos: Videos = {
   phase1: {
     title: "المرحلة الأولي",
     phase: [
-      {
-        id: 1,
-        title: "مقدمة الكورس",
-        url: "https://mttv.wistia.com/medias/k597mnkmgm",
-      },
+      // {
+      //   id: 1,
+      //   title: "مقدمة الكورس",
+      //   url: "https://mttv.wistia.com/medias/k597mnkmgm",
+      // },
       {
         id: 2,
         title: "قبل اي شئ ابني تفكيرك عن البزنس بشكل صحيح",
