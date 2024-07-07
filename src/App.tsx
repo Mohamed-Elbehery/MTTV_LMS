@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="flex justify-center gap-x-6">
-      <main className="w-full flex items-center justify-center h-screen">
+      <main className="w-full sm:flex sm:items-center sm:justify-center h-screen">
         {/* Large Screens */}
         <ReactPlayer
           width={"100%"}
@@ -40,7 +40,7 @@ const App = () => {
 
       <div
         onClick={() => setIsCourseContentHidden(false)}
-        className="fixed top-[10vh] -right-32 bg-[#2D2F31] border p-4 flex items-center gap-x-3 hover:bg-[#3c3e41] hover:-right-1 transition-all duration-500 cursor-pointer"
+        className="fixed top-0 sm:top-[10vh] -right-32 bg-[#2D2F31] border p-4 flex items-center gap-x-3 hover:bg-[#3c3e41] hover:-right-1 transition-all duration-500 cursor-pointer"
       >
         <RxHamburgerMenu size={23} /> Course Content
       </div>
