@@ -115,12 +115,12 @@ const Phase: React.FC<{ phase: { phase: Video[]; title: string } }> = (
           {phase.phase.phase.map((video) => (
             <button
               onClick={() => setActiveVideo(video)}
-              className={`px-4 py-2 pr-8 text-right w-full transition duration-500 ease-out hover:bg-zinc-600 ${
+              className={`px-4 py-2 pr-8 text-right w-full transition duration-500 ease-out hover:bg-zinc-600 flex gap-x-3 ${
                 activeVideo.url === video.url && "bg-zinc-600"
               }`}
               key={`${video.id} - ${video.title}`}
             >
-              {video.id} - {video.title}
+              <span>{video.id}</span> - {video.title}
             </button>
           ))}
         </div>
