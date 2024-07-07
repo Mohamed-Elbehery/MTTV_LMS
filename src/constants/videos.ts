@@ -107,18 +107,23 @@ export const videos: Videos = {
       },
       {
         id: 16,
-        title: "انشاء حساب اعلاني + ازاي تتجنب المخاطر",
-        url: "https://abdojudo123456.wistia.com/medias/opbfhs5lkz",
-      },
-      {
-        id: 17,
         title: "خليك مبدع..بطل شغل نسخ ولصخ!! (content writing)",
         url: "https://abdojudo123456.wistia.com/medias/w31g4xdvrj",
       },
       {
+        id: 17,
+        title: "انشاء حساب اعلاني + ازاي تتجنب المخاطر",
+        url: "https://abdojudo123456.wistia.com/medias/opbfhs5lkz",
+      },
+      {
+        id: 18,
+        title: "ازاي تنشأ حمله اعلانية ناجحه وتتجنب اخطاء 99% من الناس",
+        url: "https://abdojudo123456.wistia.com/medias/jzpnmrjajn",
+      },
+      {
         id: 18,
         title: "انشاء اول حمله اعلانية ليك",
-        url: "https://abdojudo123456.wistia.com/medias/jzpnmrjajn",
+        url: "https://abdojudo123456.wistia.com/medias/59fzt79uaz",
       },
     ],
   },
