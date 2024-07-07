@@ -1,18 +1,4 @@
-export type Video = {
-  id: number;
-  title: string;
-  url: string;
-};
-
-type Phase = { title: string; phase: Video[] };
-
-// Define a type for the phases
-type Videos = {
-  phase1: Phase;
-  phase2: Phase;
-  phase3: Phase;
-  phase4: Phase;
-};
+import { Videos } from "../types";
 
 export const videos: Videos = {
   phase1: {
