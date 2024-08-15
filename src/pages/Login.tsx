@@ -18,7 +18,16 @@ export default function Login() {
     !isAuthenticated && (
       <>
         <div className="fixed inset-0 flex items-center justify-center z-20 text-black">
-          <div className="w-max h-[200px] bg-white border rounded-md flex flex-col gap-y-4 p-4 justify-center">
+          <form onSubmit={() => {
+            if (
+              user.name === "mttv_end_client" &&
+              user.password == "fhwwuf[]h12"
+            ) {
+              localStorage.setItem("authenticated", "true");
+              setIsAuthenticated(true);
+              navigate("/");
+            }
+          }} className="w-max h-[200px] bg-white border rounded-md flex flex-col gap-y-4 p-4 justify-center">
             <div className="flex items-center gap-x-3">
               <label htmlFor="username" className="w-20">
                 Username
@@ -45,25 +54,12 @@ export default function Login() {
             </div>
 
             <button
+              type="submit"
               className="border px-3 py-2 rounded-md bg-black text-white hover:bg-opacity-75 transition"
-              onClick={() => {
-                console.log(import.meta.env.VITE_USERNAME);
-
-                if (
-                  user.name === import.meta.env.VITE_USERNAME &&
-                  user.password == import.meta.env.VITE_PASSWORD
-                ) {
-                  console.log("ok");
-
-                  localStorage.setItem("authenticated", "true");
-                  setIsAuthenticated(true);
-                  navigate("/");
-                }
-              }}
             >
               Login
             </button>
-          </div>
+          </form>
         </div>
       </>
     )
