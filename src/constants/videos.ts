@@ -12,7 +12,7 @@ export const videos: Videos = {
       {
         id: 2,
         title: "قبل اي شئ ابني تفكيرك عن البزنس بشكل صحيح",
-        url: "https://mttv.wistia.com/medias/k597mnkmgm",
+        url: "https://abdojudo123456.wistia.com/medias/pxpg6w8n1l",
       },
       {
         id: 3,
